@@ -10,16 +10,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.teal,
         //A widget that insets its child by sufficient padding to avoid intrusions by the operating system.
         body: SafeArea(
-          child: Container(
-            child: Center(child: Text('Hello')),
-            height: 100,
-            width: 100,
-            color: Colors.white,
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.fromLTRB(10, 15, 20, 5),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Center(child: Text('Container1')),
+                width: 100,
+                color: Colors.red,
+              ),
+              Container(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Center(child: Text('Container2')),
+                    height: 100,
+                    width: 100,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    child: Center(child: Text('Container3')),
+                    height: 100,
+                    width: 100,
+                    color: Colors.greenAccent,
+                  )
+                ],
+              )),
+              Container(
+                child: Center(child: Text('Container4')),
+                width: 100,
+                color: Colors.blue,
+              ),
+            ],
           ),
         ),
       ),
