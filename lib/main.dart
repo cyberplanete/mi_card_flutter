@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,38 +15,65 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         //A widget that insets its child by sufficient padding to avoid intrusions by the operating system.
         body: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
             children: [
-              Container(
-                child: Center(child: Text('Container1')),
-                width: 100,
-                color: Colors.red,
+              CircleAvatar(
+                backgroundImage: AssetImage('images/loser.jpg'),
+                radius: 50,
+              ),
+              Text(
+                'Pascal Joret',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontFamily: 'Playball'),
+              ),
+              Text(
+                'Flutter Developpeur'.toUpperCase(),
+                style: TextStyle(
+                    fontFamily: 'SourceSansPro',
+                    color: Colors.teal.shade100,
+                    fontSize: 20,
+                    letterSpacing: 2.5,
+                    fontWeight: FontWeight.bold),
               ),
               Container(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Center(child: Text('Container2')),
-                    height: 100,
-                    width: 100,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    child: Center(child: Text('Container3')),
-                    height: 100,
-                    width: 100,
-                    color: Colors.greenAccent,
-                  )
-                ],
-              )),
-              Container(
-                child: Center(child: Text('Container4')),
-                width: 100,
-                color: Colors.blue,
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                padding: EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Icon(Icons.phone),
+                    SizedBox(width: 20),
+                    Text(
+                      '+33 6 50 29 51 95',
+                      style: TextStyle(
+                          color: Colors.teal.shade900,
+                          fontSize: 20,
+                          fontFamily: 'SourceSansPro'),
+                    ),
+                  ],
+                ),
               ),
+              Container(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                padding: EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Icon(Icons.email),
+                    SizedBox(width: 20),
+                    Text(
+                      'pascal.joret@gmail.com',
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.teal.shade900,
+                          fontFamily: 'SourceSansPro'),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
