@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         //A widget that insets its child by sufficient padding to avoid intrusions by the operating system.
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage('images/loser.jpg'),
@@ -38,42 +39,41 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 2.5,
                     fontWeight: FontWeight.bold),
               ),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Icon(Icons.phone),
-                    SizedBox(width: 20),
-                    Text(
-                      '+33 6 50 29 51 95',
-                      style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontSize: 20,
-                          fontFamily: 'SourceSansPro'),
-                    ),
-                  ],
+              SizedBox(
+                height: 20,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Icon(Icons.email),
-                    SizedBox(width: 20),
-                    Text(
-                      'pascal.joret@gmail.com',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.teal.shade900,
-                          fontFamily: 'SourceSansPro'),
-                    ),
-                  ],
+                child: ListTile(
+                  leading: Icon(Icons.phone),
+                  title: Text(
+                    '+33 6 50 29 51 95',
+                    style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontSize: 20,
+                        fontFamily: 'SourceSansPro'),
+                  ),
                 ),
-              )
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(Icons.email),
+                  title: Text(
+                    'pascal.joret@gmail.com',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSansPro'),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
